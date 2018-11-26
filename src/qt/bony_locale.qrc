@@ -1,0 +1,36 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/bony_bg.qm</file>
+        <file alias="ca">locale/bony_ca.qm</file>
+        <file alias="cs">locale/bony_cs.qm</file>
+        <file alias="da">locale/bony_da.qm</file>
+        <file alias="de">locale/bony_de.qm</file>
+        <file alias="en">locale/bony_en.qm</file>
+        <file alias="en_US">locale/bony_en_US.qm</file>
+        <file alias="eo">locale/bony_eo.qm</file>
+        <file alias="es">locale/bony_es.qm</file>
+        <file alias="es_ES">locale/bony_es_ES.qm</file>
+        <file alias="fi">locale/bony_fi.qm</file>
+        <file alias="fr_FR">locale/bony_fr_FR.qm</file>
+        <file alias="hi_IN">locale/bony_hi_IN.qm</file>
+        <file alias="hr">locale/bony_hr.qm</file>
+        <file alias="hr_HR">locale/bony_hr_HR.qm</file>
+        <file alias="it">locale/bony_it.qm</file>
+        <file alias="ja">locale/bony_ja.qm</file>
+        <file alias="ko_KR">locale/bony_ko_KR.qm</file>
+        <file alias="lt_LT">locale/bony_lt_LT.qm</file>
+        <file alias="nl">locale/bony_nl.qm</file>
+        <file alias="pl">locale/bony_pl.qm</file>
+        <file alias="pt">locale/bony_pt.qm</file>
+        <file alias="pt_BR">locale/bony_pt_BR.qm</file>
+        <file alias="ro_RO">locale/bony_ro_RO.qm</file>
+        <file alias="ru">locale/bony_ru.qm</file>
+        <file alias="sk">locale/bony_sk.qm</file>
+        <file alias="sv">locale/bony_sv.qm</file>
+        <file alias="tr">locale/bony_tr.qm</file>
+        <file alias="uk">locale/bony_uk.qm</file>
+        <file alias="vi">locale/bony_vi.qm</file>
+        <file alias="zh_CN">locale/bony_zh_CN.qm</file>
+        <file alias="zh_TW">locale/bony_zh_TW.qm</file>
+    </qresource>
+</RCC>
