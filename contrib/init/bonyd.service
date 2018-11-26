@@ -1,0 +1,26 @@
+[Unit]
+Description=BONY's distributed currency daemon
+After=network.target
+
+[Service]
+User=bony
+Group=bony
+
+Type=forking
+PIDFile=/var/lib/bonyd/bonyd.pid
+
+ExecStart=/usr/bin/bonyd -daemon -pid=/var/lib/bonyd/bonyd.pid \
+          -conf=/etc/bony/bony.conf -datadir=/var/lib/bonyd
+
+ExecStop=-/usr/bin/bony-cli -conf=/etc/bony/bony.conf \
+         -datadir=/var/lib/bonyd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
