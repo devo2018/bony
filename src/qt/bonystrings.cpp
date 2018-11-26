@@ -235,10 +235,10 @@ QT_TRANSLATE_NOOP("bony-core", ""
 QT_TRANSLATE_NOOP("bony-core", ""
 "You must specify a masternodeprivkey in the configuration. Please see "
 "documentation for help."),
-QT_TRANSLATE_NOOP("bony-core", "(51472 could be used only on mainnet)"),
+QT_TRANSLATE_NOOP("bony-core", "(9530 could be used only on mainnet)"),
 QT_TRANSLATE_NOOP("bony-core", "(default: %s)"),
 QT_TRANSLATE_NOOP("bony-core", "(default: 1)"),
-QT_TRANSLATE_NOOP("bony-core", "(must be 51472 for mainnet)"),
+QT_TRANSLATE_NOOP("bony-core", "(must be 9530 for mainnet)"),
 QT_TRANSLATE_NOOP("bony-core", "<category> can be:"),
 QT_TRANSLATE_NOOP("bony-core", "Accept command line and JSON-RPC commands"),
 QT_TRANSLATE_NOOP("bony-core", "Accept connections from outside (default: 1 if no -proxy or -connect)"),
