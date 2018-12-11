@@ -36,7 +36,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
     // it'll get a pile of addresses with newer timestamps.
     // Seed nodes are given a random 'last seen time' of between one and two
     // weeks ago.
-    const int64_t nOneWeek = 7 * 24 * 60 * 60;
+    const int64_t nOneWeek = 60;
     for (unsigned int i = 0; i < count; i++) {
         struct in6_addr ip;
         memcpy(&ip, data[i].addr, sizeof(ip));
@@ -53,7 +53,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x"));
+    (0, uint256("0x001"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     1525106065, // * UNIX timestamp of last checkpoint block
@@ -110,16 +110,16 @@ public:
          */
         pchMessageStart[0] = 0x91;
         pchMessageStart[1] = 0xcc;
-        pchMessageStart[2] = 0xff;
+        pchMessageStart[2] = 0xf1;
         pchMessageStart[3] = 0xee;
         vAlertPubKey = ParseHex("0000098d3ba6ba6e7423fa5cbd6a89e0a9a5348f88d332b44a5cb1a8b7ed2c1eaa335fc8dc4f012cb8241cc0bdafd6ca70c5f5448916e4e6f511bcd746ed57dc50");
         nDefaultPort = 5930;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // BONY starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 30;
-        nEnforceBlockUpgradeMajority = 8100; // 75%
-        nRejectBlockOutdatedMajority = 10260; // 95%
-        nToCheckBlockUpgradeMajority = 10800; // Approximate expected amount of blocks in 7 days (1440*7.5)
+        nEnforceBlockUpgradeMajority = 0; // 75%
+        nRejectBlockOutdatedMajority = 0; // 95%
+        nToCheckBlockUpgradeMajority = 0; // Approximate expected amount of blocks in 7 days (1440*7.5)
         nMinerThreads = 0;
         nTargetTimespan = 1 * 30; // BONY: 1 day
         nTargetSpacing = 1 * 30;  // BONY: 1 minute
@@ -184,8 +184,8 @@ public:
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
-        fMiningRequiresPeers = true;
-        fAllowMinDifficultyBlocks = false;
+        fMiningRequiresPeers = false;
+        fAllowMinDifficultyBlocks = true;
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
         fMineBlocksOnDemand = false;
@@ -200,12 +200,7 @@ public:
         nStartMasternodePayments = 1403728576; //Wed, 25 Jun 2014 20:36:16 GMT
 
         /** Zerocoin */
-        zerocoinModulus = "25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784"
-            "4069182906412495150821892985591491761845028084891200728449926873928072877767359714183472702618963750149718246911"
-            "6507761337985909570009733045974880842840179742910064245869181719511874612151517265463228221686998754918242243363"
-            "7259085141865462043576798423387184774447920739934236584823824281198163815010674810451660377306056201619676256133"
-            "8441436038339044149526344321901146575444541784240209246165157233507787077498171257724679629263863563732899121548"
-            "31438167899885040445364023527381951378636564391212010397122822120720357";
+        zerocoinModulus ="31438167899885040445364023527381951378636564391212010397122822120720357";
         nMaxZerocoinSpendsPerTransaction = 7; // Assume about 20kb each
         nMinZerocoinMintFee = 1 * CENT; //high fee required for zerocoin mints
         nMintRequiredConfirmations = 20; //the maximum amount of confirmations until accumulated in 19
